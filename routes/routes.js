@@ -1,6 +1,7 @@
 const express = require('express');
 const {getAllRooms, addRoom} = require('../controllers/RoomController');
 const router = express.Router();
+const {registerUser, loginUser} = require('../controllers/UsersController');
 
 
 // router.get('/', (req, res) => { res.json({msg: "HI"}) });
@@ -16,5 +17,10 @@ router.post('/room', addRoom);
 router.delete('/room/:id', (req, res) => { 
     res.send("Delete a room");
 })
+
+//for login process..
+
+router.post("/register", registerUser );
+router.post("/login", loginUser );
 
 module.exports = router;

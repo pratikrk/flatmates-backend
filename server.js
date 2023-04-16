@@ -3,6 +3,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes/routes');
 const app = express();
+const cors = require('cors');
+
+app.use(cors());
+
 
 app.use(express.json())
 
@@ -18,3 +22,5 @@ mongoose.connect(process.env.MONG_URI)
     .catch((error) => {
         console.log(error);
     });
+
+
