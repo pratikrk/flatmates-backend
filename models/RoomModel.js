@@ -9,6 +9,10 @@ const roomSchema = new Schema({
         type: String,
         required: true
     },
+    contactNo:{
+        type: String,
+        required: true
+    },
     rent:{
         type: Number,
         required: true

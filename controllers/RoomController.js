@@ -10,9 +10,9 @@ const getAllRooms = async(req, res) => {
 
 // addSingleRoom
 const addRoom = async (req, res) => {
-    const {collegeName, adderName, rent, addressLine1, addressLine2} = req.body
+    const {collegeName, adderName, contactNo, rent, addressLine1, addressLine2} = req.body
     try{
-        const room = await roomModel.create({collegeName, adderName, rent, addressLine1, addressLine2})
+        const room = await roomModel.create({collegeName, adderName, contactNo, rent, addressLine1, addressLine2})
         res.status(200).json(room);
 
     } catch (error){

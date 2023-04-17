@@ -18,6 +18,7 @@ router.delete('/room/:id', (req, res) => {
     res.send("Delete a room");
 })
 
+
 //for login process..
 
 router.post("/register", registerUser );
