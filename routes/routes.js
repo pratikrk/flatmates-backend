@@ -1,7 +1,7 @@
 const express = require('express');
 const {getAllRooms, addRoom} = require('../controllers/RoomController');
 const router = express.Router();
-const {registerUser, loginUser} = require('../controllers/UsersController');
+const {registerUser, loginUser, updateUser} = require('../controllers/UsersController');
 
 
 // router.get('/', (req, res) => { res.json({msg: "HI"}) });
@@ -23,5 +23,6 @@ router.delete('/room/:id', (req, res) => {
 
 router.post("/register", registerUser );
 router.post("/login", loginUser );
+router.post("/updateuser", updateUser)
 
 module.exports = router;

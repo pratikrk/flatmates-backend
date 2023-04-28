@@ -1,10 +1,21 @@
 const userModel = require('../models/UserModel');
 
+const updateUser=async (req, res) => {
+  var query = {'email': req.body.email};
+  req.newData = req.body;
+  let result = await userModel.findOneAndUpdate(query, req.newData);
+  result = await userModel.findOne(query)
+  // delete result.password;
+  // console.log(result);
+  res.send(result)
+}
+
 const registerUser=async (req, res) => {
     let user = new userModel(req.body);
     let result = await user.save();
     result = result.toObject();
     delete result.password;
+    // console.log(result);
     res.send(result);
 }
 
@@ -22,6 +33,7 @@ const loginUser= async (req, res) => {
   }
 
 module.exports ={
+    updateUser,
     registerUser,
     loginUser
 }
