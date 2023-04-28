@@ -13,13 +13,13 @@ app.use(express.json())
 
 app.use('/api/routes/', routes);
 
-app.use(session({
-    secret: 'secret',
-    cookie: {maxAge: 60000},
-    resave: false,
-    rolling: false,
-    saveUninitialized: true
-}));
+// app.use(session({
+//     secret: 'secret',
+//     cookie: {maxAge: 60000},
+//     resave: false,
+//     rolling: false,
+//     saveUninitialized: true
+// }));
 
 mongoose.connect(process.env.MONG_URI)
     .then(() => {
