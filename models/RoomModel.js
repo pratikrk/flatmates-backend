@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 const roomSchema = new Schema({
-    houseBuildingName:{
+    buildName:{
         type: String,
         required: true
     },
-    roomNo:{
+    roomNumber:{
         type: String,
         required: true
     },
@@ -24,10 +24,26 @@ const roomSchema = new Schema({
         type: Number,
         required: true
     },
-    contactNo:{
+    activeStatus:{
+        type: Boolean,
+        required: true
+    },
+    adderMail:{
         type: String,
         required: true
     },
+    adderName:{
+        type: String,
+        required: true
+    },
+    mobile:{
+        type: Number,
+        required: true
+    },
+    uniqueFlatKey:{
+        type: String,
+        required: true
+    }
     
 }, {timestamps: true });
 

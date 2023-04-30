@@ -1,5 +1,5 @@
 const express = require('express');
-const {getAllRooms, addRoom} = require('../controllers/RoomController');
+const {getAllRooms, getRoomById, addRoom} = require('../controllers/RoomController');
 const router = express.Router();
 const {registerUser, loginUser, updateUser} = require('../controllers/UsersController');
 
@@ -8,9 +8,9 @@ const {registerUser, loginUser, updateUser} = require('../controllers/UsersContr
 
 router.get('/room', getAllRooms);
 
-router.get('/room/:id', (req, res) => { 
-    res.send("Single room detail") ;
-})
+router.get('/room/:id', getRoomById);
+
+// router.get('/roombymail', getRoomByMail);
 
 router.post('/room', addRoom);
 

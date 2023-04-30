@@ -4,9 +4,7 @@ const updateUser=async (req, res) => {
   var query = {'email': req.body.email};
   req.newData = req.body;
   let result = await userModel.findOneAndUpdate(query, req.newData);
-  result = await userModel.findOne(query)
-  // delete result.password;
-  // console.log(result);
+  result = await userModel.findOne(query).select('email name mobile')
   res.send(result)
 }
 
