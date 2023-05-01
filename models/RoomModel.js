@@ -24,6 +24,9 @@ const roomSchema = new Schema({
         type: Number,
         required: true
     },
+    additionalNote:{
+        type: String,
+    },
     activeStatus:{
         type: Boolean,
         required: true
