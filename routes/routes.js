@@ -25,4 +25,10 @@ router.post("/register", registerUser );
 router.post("/login", loginUser );
 router.post("/updateuser", updateUser)
 
+
+//temp
+router.get("/tmp", async (req, res)=>{
+    res.send({lat: 34, lng:77});
+})
+
 module.exports = router;
